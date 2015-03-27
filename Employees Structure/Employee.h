@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, employeeType) {
     senior = 2
 };
 
-#define kEmpolyeeTypeArray @"Junior", @"Middle", @"Senior", nil
+#define kEmpolyeeTypeArray @[@"Junior", @"Middle", @"Senior"]
 
 @required
 - (NSString *)getType;

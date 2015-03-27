@@ -16,10 +16,14 @@ int main(int argc, const char * argv[]) {
         Developer *mid = [Developer createEmployeeWith:middle];
         Developer *sen = [Developer createEmployeeWith:senior];
         
+        // Code for Testing 'Invalid Employee type value' Exception
+        // Developer *unk = [Developer createEmployeeWith:5];
+        
         NSMutableArray *developersList = [[NSMutableArray alloc] init];
         [developersList addObject:jun];
         [developersList addObject:mid];
         [developersList addObject:sen];
+        // [developersList addObject:unk];
         
         for (Developer *dev in developersList) {
             NSLog(@"%@",[dev description]);

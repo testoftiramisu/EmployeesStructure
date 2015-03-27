@@ -37,21 +37,24 @@ __builtin_unreachable(); \
         case senior:
         return [SeniorDeveloper new];
         break;
-        default:
-        return nil;
+        default: {
+            [NSException raise:@"Invalid Employee type value"
+                        format:@"Type of Employee: %ld is invalid", type];
+            return nil;
+        }
         break;
     }
+}
+
+- (NSString *)employeeTypeEnumToString:(employeeType)type
+{
+    NSArray *employeeTypeArray = kEmpolyeeTypeArray;
+    return [employeeTypeArray objectAtIndex:type];
 }
 
 - (float)getBonusRate
 {
     return 0.5;
-}
-
-- (NSString *)employeeTypeEnumToString:(employeeType)type
-{
-    NSArray *employeeTypeArray = [[NSArray alloc] initWithObjects:kEmpolyeeTypeArray];
-    return [employeeTypeArray objectAtIndex:type];
 }
 
 - (NSString *)getType ABSTRACT_METHOD
